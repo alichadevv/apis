@@ -1,1 +1,1 @@
-DEMO : https://apis-liart.vercel.app/
+DEMO : https://apis-rest-mecha-icha.alichazahra.xyz/
