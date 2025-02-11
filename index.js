@@ -61,11 +61,29 @@ app.get('/api/ragbot', async (req, res) => {
 //downloader
 app.get('/api/mediafire', async (req, res) => {
   try {
-    const message = req.query.message;
-    if (!message) {
+    const message = req.query.url;
+    if (!url) {
       return res.status(400).json({ error: 'Parameter "message" tidak ditemukan' });
     }
-    const response = await alicha.ragBot(message);
+    const response = await alicha.mediafireDl(url);
+    res.status(true).json({
+      status: true,
+      creator: "alichadevv",
+      data: { response }
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+//Search
+app.get('/api/pinterest', async (req, res) => {
+  try {
+    const query = req.query.query;
+    if (!query) {
+      return res.status(400).json({ error: 'Parameter "message" tidak ditemukan' });
+    }
+    const response = await alicha.pinterest(query);
     res.status(200).json({
       status: 200,
       creator: "alichadevv",
