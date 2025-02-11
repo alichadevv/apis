@@ -59,7 +59,7 @@ app.get('/api/ragbot', async (req, res) => {
 });
 
 //downloader
-app.get('/mediafire', async (req, res) => {
+app.get('/api/mediafire', async (req, res) => {
   try {
     const message = req.query.message;
     if (!message) {
