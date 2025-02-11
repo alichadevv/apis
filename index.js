@@ -2,7 +2,7 @@ var express = require("express"), cors = require("cors"), secure = require("ssl-
 const path = require('path');
 const os = require('os');
 const fs = require('fs');
-const ptz = require('./function/index') 
+const alicha = require('./function/index') 
 const axios = require('axios')
 
 var app = express();
@@ -47,10 +47,10 @@ app.get('/api/ragbot', async (req, res) => {
     if (!message) {
       return res.status(400).json({ error: 'Parameter "message" tidak ditemukan' });
     }
-    const response = await ptz.ragBot(message);
+    const response = await alicha.ragBot(message);
     res.status(200).json({
       status: 200,
-      creator: "siputzx",
+      creator: "alichadevv",
       data: { response }
     });
   } catch (error) {
@@ -65,10 +65,10 @@ app.get('/api/degreeguru', async (req, res) => {
     if (!message) {
       return res.status(400).json({ error: 'Parameter "message" tidak ditemukan' });
     }
-    const response = await ptz.degreeGuru(message);
+    const response = await alicha.degreeGuru(message);
     res.status(200).json({
       status: 200,
-      creator: "siputzx",
+      creator: "alichadevv",
       data: { response }
     });
   } catch (error) {
@@ -83,10 +83,10 @@ app.get('/api/smartcontract', async (req, res) => {
     if (!message) {
       return res.status(400).json({ error: 'Parameter "message" tidak ditemukan' });
     }
-    const response = await ptz.smartContract(message);
+    const response = await alicha.smartContract(message);
     res.status(200).json({
       status: 200,
-      creator: "siputzx",
+      creator: "alichadevv",
       data: { response }
     });
   } catch (error) {
@@ -101,10 +101,10 @@ app.get('/api/blackboxAIChat', async (req, res) => {
     if (!message) {
       return res.status(400).json({ error: 'Parameter "message" tidak ditemukan' });
     }
-    const response = await ptz.blackboxAIChat(message);
+    const response = await alicha.blackboxAIChat(message);
     res.status(200).json({
       status: 200,
-      creator: "siputzx",
+      creator: "alichadevv",
       data: { response }
     });
   } catch (error) {
