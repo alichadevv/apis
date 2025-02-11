@@ -66,8 +66,8 @@ app.get('/api/mediafire', async (req, res) => {
       return res.status(400).json({ error: 'Parameter "message" tidak ditemukan' });
     }
     const response = await alicha.mediafireDl(url);
-    res.status(true).json({
-      status: true,
+    res.status(200).json({
+      status: 200,
       creator: "alichadevv",
       data: { response }
     });
