@@ -1,5 +1,4 @@
 const axios = require('axios')
-const cheerio = require('cheerio')
 
 const mediafireDl = async (message) => {
 const res = await axios.get(message) 
