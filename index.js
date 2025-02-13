@@ -79,7 +79,7 @@ app.get('/api/mediafire', async (req, res) => {
 //Search
 app.get('/api/pinterest', async (req, res) => {
   try {
-    const { message } = req.query;
+    const message = req.query.message;
     if (!message) {
       return res.status(400).json({ error: 'Parameter "message" tidak ditemukan' });
     }
