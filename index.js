@@ -94,24 +94,6 @@ app.get('/api/tiktok', async (req, res) => {
   }
 });
 
-//Search
-app.get('/api/pinterest', async (req, res) => {
-  try {
-    const { message } = req.query;
-    if (!message) {
-      return res.status(400).json({ error: 'Parameter "message" tidak ditemukan' });
-    }
-    const response = await alicha.pinterest(message);
-    res.status(200).json({
-      status: 200,
-      creator: "alichadevv",
-      data: { response }
-    });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
-
 // Endpoint untuk degreeGuru
 app.get('/api/degreeguru', async (req, res) => {
   try {
