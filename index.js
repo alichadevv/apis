@@ -3,7 +3,6 @@ const path = require('path');
 const os = require('os');
 const fs = require('fs');
 const alicha = require('./function/index') 
-const options = require('./function/options.js');
 const axios = require('axios')
 
 var app = express();
