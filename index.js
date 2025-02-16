@@ -3,6 +3,7 @@ const path = require('path');
 const os = require('os');
 const fs = require('fs');
 const alicha = require('./function/index') 
+const options = require('./function/options.js');
 const axios = require('axios')
 
 var app = express();
@@ -48,6 +49,59 @@ app.get('/api/ragbot', async (req, res) => {
       return res.status(400).json({ error: 'Parameter "message" tidak ditemukan' });
     }
     const response = await alicha.ragBot(message);
+    res.status(200).json({
+      status: 200,
+      creator: "alichadevv",
+      data: { response }
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+//downloader
+app.get('/api/mediafire', async (req, res) => {
+  try {
+    const message = req.query.message;
+    if (!message) {
+      return res.status(400).json({ error: 'Parameter "message" tidak ditemukan' });
+    }
+    const response = await alicha.mediafireDl(message);
+    res.status(200).json({
+      status: 200,
+      creator: "alichadevv",
+      data: { response }
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.get('/api/tiktok', async (req, res) => {
+  try {
+    const message = req.query.message;
+    if (!message) {
+      return res.status(400).json({ error: 'Parameter "message" tidak ditemukan' });
+    }
+    const response = await alicha.tiktok(message);
+    res.status(200).json({
+      status: 200,
+      creator: "alichadevv",
+      data: { response }
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+//Search
+app.get('/api/pinterest', async (req, res) => {
+  try {
+    const { message } = req.query;
+    if (!message) {
+      return res.status(400).json({ error: 'Parameter "message" tidak ditemukan' });
+    }
+    const response = await alicha.pinterest(message);
     res.status(200).json({
       status: 200,
       creator: "alichadevv",
