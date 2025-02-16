@@ -3,6 +3,5 @@ module.exports = {
 	smartContract: require('./scraper/smartContract'),
 	ragBot: require('./scraper/ragBot'),
 	degreeGuru: require('./scraper/degreeGuru')
-	mediafireDl: require('./scraper/mediafire'),
 	tiktok: require('./scraper/tiktok'),
 }
